@@ -1,0 +1,30 @@
+{
+  "tipologia": "cunicolo",
+  "nome": "@stanza.cunicolo.nome",
+  "ingresso": "@stanza.cunicolo.ingresso",
+  "luogo": "cunicolo",
+  "combattimento": false,
+  "celle": [16, 3],
+  "uscite": [
+    { "cella": 1, "verso": "corte" },
+    { "cella": 14, "verso": "bosco" }
+  ],
+  "pavimento": ["rpg:02_07", "rpg:03_07", "rpg:02_07", "rpg:04_07"],
+  "parete": ["rpg:15_27", "rpg:16_27"],
+  "bordo": "rpg:16_33",
+  "arredo": [
+    { "tile": "rpg:07_18", "cella": [3, 0] },
+    { "tile": "rpg:07_18", "cella": [8, 0] },
+    { "tile": "rpg:07_18", "cella": [12, 0] },
+    { "tile": "rpg:00_23", "cella": [5, 0], "solido": true },
+    { "tile": "rpg:02_25", "cella": [6, 0], "solido": true },
+    { "tile": "rpg:00_22", "cella": [10, 0], "solido": true }
+  ],
+  "luci": [
+    { "cella": [3, 0], "colore": [1.0, 0.55, 0.25], "raggio": 9, "tremola": true },
+    { "cella": [8, 0], "colore": [1.0, 0.55, 0.25], "raggio": 9, "tremola": true },
+    { "cella": [12, 0], "colore": [1.0, 0.55, 0.25], "raggio": 9, "tremola": true }
+  ],
+  "residenti": [],
+  "voci": []
+}

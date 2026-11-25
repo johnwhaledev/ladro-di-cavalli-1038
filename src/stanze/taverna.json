@@ -1,0 +1,55 @@
+{
+  "tipologia": "taverna",
+  "nome": "@stanza.taverna.nome",
+  "ingresso": "@stanza.taverna.ingresso",
+  "combattimento": false,
+  "edifici": ["edificio_taverna"],
+  "celle": [12, 8],
+  "porta": 6,
+  "pavimento": ["rpg:02_08", "rpg:03_08", "rpg:04_08", "rpg:02_08"],
+  "parete": ["rpg:15_35", "rpg:16_35"],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    { "tile": "rpg:00_13", "cella": [2, 0], "solido": true },
+    { "tile": "rpg:08_20", "cella": [0, 0], "solido": true },
+    { "tile": "rpg:08_20", "cella": [5, 0], "solido": true },
+    { "tile": "rpg:05_24", "cella": [9, 0], "solido": true },
+    { "tile": "rpg:00_23", "cella": [10, 0], "solido": true },
+    { "tile": "rpg:00_22", "cella": [11, 0], "solido": true },
+    { "tile": "rpg:00_23", "cella": [11, 1], "solido": true },
+    { "tile": "rpg:03_26", "cella": [8, 2], "solido": true },
+    { "tile": "rpg:03_27", "cella": [9, 2], "solido": true },
+    { "tile": "rpg:03_26", "cella": [10, 2], "solido": true },
+    { "tile": "rpg:04_11", "cella": [2, 4], "solido": true },
+    { "tile": "rpg:03_21", "cella": [1, 4] },
+    { "tile": "rpg:03_21", "cella": [3, 4], "flip": true },
+    { "tile": "rpg:06_20", "cella": [5, 3], "solido": true },
+    { "tile": "rpg:03_21", "cella": [4, 3] },
+    { "tile": "rpg:03_21", "cella": [6, 3], "flip": true },
+    { "tile": "rpg:04_12", "cella": [9, 5], "solido": true },
+    { "tile": "rpg:03_21", "cella": [8, 5] },
+    { "tile": "rpg:03_21", "cella": [10, 5], "flip": true },
+    { "tile": "rpg:00_22", "cella": [0, 6], "solido": true },
+    { "tile": "rpg:00_23", "cella": [0, 7], "solido": true }
+  ],
+  "luci": [
+    { "cella": [2, 0], "colore": [1.0, 0.55, 0.25], "raggio": 16, "tremola": true },
+    { "cella": [0, 0], "colore": [1.0, 0.8, 0.5], "raggio": 9 },
+    { "cella": [5, 0], "colore": [1.0, 0.8, 0.5], "raggio": 9 },
+    { "cella": [9, 4], "colore": [1.0, 0.7, 0.4], "raggio": 12 }
+  ],
+  "residenti": [
+    { "sprite": "MiniMerchant", "cella": [9, 1], "nome": "@stanza.taverna.residenti.0.nome", "parla": true },
+    { "sprite": "MiniWorker", "cella": [3, 5] },
+    { "sprite": "MiniVillagerWoman", "cella": [6, 4], "flip": true },
+    { "sprite": "MiniOldMan", "cella": [8, 6] }
+  ],
+  "voci": [
+    "@stanza.taverna.voci.0",
+    "@stanza.taverna.voci.1",
+    "@stanza.taverna.voci.2",
+    "@stanza.taverna.voci.3",
+    "@stanza.taverna.voci.4",
+    "@stanza.taverna.voci.5"
+  ]
+}

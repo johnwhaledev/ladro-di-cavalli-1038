@@ -1,0 +1,50 @@
+{
+  "tipologia": "castello",
+  "nome": "@stanza.castello.nome",
+  "ingresso": "@stanza.castello.ingresso",
+  "luogo": "castello",
+  "combattimento": true,
+  "celle": [13, 9],
+  "porta": 6,
+  "pavimento": ["rpg:02_06", "rpg:03_06", "rpg:02_06"],
+  "parete": ["rpg:15_27", "rpg:16_27"],
+  "bordo": "rpg:16_33",
+  "tappeto": { "base": "rpg:19_10", "riquadri": [[5, 1, 7, 8]] },
+  "arredo": [
+    { "tile": "rpg:02_19", "cella": [6, 1], "solido": true },
+    { "pezzo": "gonfalone_blu", "cella": [4, 0] },
+    { "pezzo": "gonfalone_blu", "cella": [8, 0] },
+    { "pezzo": "stendardo_azzurro", "cella": [1, 0] },
+    { "pezzo": "stendardo_azzurro", "cella": [11, 0] },
+    { "tile": "rpg:08_19", "cella": [5, 1], "solido": true },
+    { "tile": "rpg:08_19", "cella": [7, 1], "solido": true },
+    { "tile": "rpg:12_41", "cella": [0, 1], "solido": true },
+    { "tile": "rpg:12_41", "cella": [0, 2], "solido": true },
+    { "tile": "rpg:11_43", "cella": [12, 1], "solido": true },
+    { "tile": "rpg:11_41", "cella": [11, 1] },
+    { "tile": "rpg:04_25", "cella": [10, 5], "solido": true },
+    { "tile": "rpg:02_21", "cella": [11, 5], "solido": true, "flip": true },
+    { "pezzo": "rastrelliera", "cella": [0, 6], "solido": true },
+    { "tile": "rpg:08_19", "cella": [0, 8], "solido": true },
+    { "tile": "rpg:08_19", "cella": [12, 8], "solido": true }
+  ],
+  "luci": [
+    { "cella": [5, 1], "colore": [1.0, 0.7, 0.4], "raggio": 10, "tremola": true },
+    { "cella": [7, 1], "colore": [1.0, 0.7, 0.4], "raggio": 10, "tremola": true },
+    { "cella": [12, 1], "colore": [1.0, 0.85, 0.4], "raggio": 7 },
+    { "cella": [6, 5], "colore": [0.95, 0.8, 0.6], "raggio": 14 }
+  ],
+  "residenti": [
+    { "sprite": "MiniKingMan", "cella": [6, 2], "nome": "@stanza.castello.residenti.0.nome", "parla": true },
+    { "sprite": "MiniQueen", "cella": [8, 2], "flip": true, "nome": "@stanza.castello.residenti.1.nome" },
+    { "sprite": "MiniHalberdMan", "cella": [4, 3] },
+    { "sprite": "MiniSpearMan", "cella": [9, 3], "flip": true },
+    { "sprite": "MiniVillagerWoman", "cella": [10, 7], "flip": true }
+  ],
+  "voci": [
+    "@stanza.castello.voci.0",
+    "@stanza.castello.voci.1",
+    "@stanza.castello.voci.2",
+    "@stanza.castello.voci.3"
+  ]
+}

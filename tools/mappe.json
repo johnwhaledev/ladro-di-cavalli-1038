@@ -1,0 +1,769 @@
+{
+  "_nota": "Una voce per citta'. 'picks' = scelte curate a mano (il borgo, ereditate da build_assets.py e migrate al nuovo schema di id). 'categorie' = selezione automatica dal catalogo, quanti pezzi per categoria: e' una prima passata, non curatela — serve a vedere la mappa in piedi e poi si sfoltisce. Il borgo tiene @elmo_nasale (la ronda con l'elmo normanno) e @cappuccio (il ladro e i fuorilegge); esclude gli accessori delle altre due citta'.",
+  "borgo": {
+    "titolo": "Valdarno",
+    "picks": "picks_borgo.json",
+    "personaggi": {
+      "pool": [
+        "src/mini",
+        "src/accessori"
+      ],
+      "escludi": [
+        "@turbante",
+        "@tricorno",
+        "@bandana",
+        "@elmo_cornuto",
+        "@colbacco",
+        "Vik",
+        "Sar",
+        "Pir",
+        "ladro_cammello",
+        "ladro_dromedario"
+      ]
+    },
+    "_pixel_crawler": "Le tavole tree_0N sono griglie di alberi di tutte le stagioni, anche spogli e ghiacciati: si prende UN albero estivo per voce, col suo riquadro [x0, y0, x1, y1] in pixel della tavola. Prima si disegnava la tavola intera come uno sprite e la fila di sopra galleggiava su quella di sotto.",
+    "pixel_crawler": {
+      "quercia_pc": {
+        "tavola": "tree_01",
+        "riquadro": [
+          0,
+          0,
+          112,
+          160
+        ],
+        "hu": 9.0
+      },
+      "quercia_pc_b": {
+        "tavola": "tree_01",
+        "riquadro": [
+          112,
+          0,
+          224,
+          160
+        ],
+        "hu": 8.6
+      },
+      "faggio_pc": {
+        "tavola": "tree_02",
+        "riquadro": [
+          0,
+          112,
+          64,
+          224
+        ],
+        "hu": 7.0
+      },
+      "faggio_pc_b": {
+        "tavola": "tree_02",
+        "riquadro": [
+          60,
+          112,
+          128,
+          224
+        ],
+        "hu": 6.6
+      },
+      "pioppo_pc": {
+        "tavola": "tree_03",
+        "riquadro": [
+          0,
+          0,
+          128,
+          256
+        ],
+        "hu": 10.0
+      },
+      "pioppo_pc_b": {
+        "tavola": "tree_03",
+        "riquadro": [
+          128,
+          0,
+          256,
+          256
+        ],
+        "hu": 9.6
+      },
+      "arbusto_pc": {
+        "tavola": "tree_04",
+        "riquadro": [
+          0,
+          48,
+          28,
+          96
+        ],
+        "hu": 3.0
+      }
+    },
+    "_ritocchi": "25/09 notte ('fumo fermo finto da sprite non va bene e nemmeno fuochi'): in pixel dello sprite, i fuochi su cui src/fuochi.js mette la fiamma animata (fiamme: [x, base, altezza]); v. anche la voce del fiordo",
+    "ritocchi": {
+      "falo": {
+        "fiamme": [
+          [
+            16,
+            18,
+            13
+          ]
+        ]
+      },
+      "braciere": {
+        "fiamme": [
+          [
+            4.5,
+            4,
+            5
+          ]
+        ]
+      },
+      "torcia": {
+        "fiamme": [
+          [
+            3.5,
+            3,
+            4
+          ]
+        ]
+      },
+      "k_rpg_00_13": {
+        "fiamme": [
+          [
+            6.5,
+            10,
+            4
+          ]
+        ]
+      },
+      "k_rpg_00_14": {
+        "fiamme": [
+          [
+            6,
+            10,
+            4
+          ]
+        ]
+      },
+      "k_rpg_08_14": {
+        "fiamme": [
+          [
+            7.5,
+            10,
+            5
+          ]
+        ]
+      },
+      "k_rpg_08_15": {
+        "fiamme": [
+          [
+            7.5,
+            10,
+            5
+          ]
+        ]
+      },
+      "edificio_bottega": {
+        "camini": [
+          [
+            46.5,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "costa": {
+    "titolo": "La costa saracena",
+    "categorie": {
+      "edifici_deserto": 46,
+      "tetti": 12,
+      "props_deserto": 25,
+      "props": 30,
+      "botteghe": 18,
+      "tendoni": 8,
+      "accampamenti": 14,
+      "strutture_difese": 10,
+      "natura_deserto": 8,
+      "rocce_palme": 20,
+      "porto": 12,
+      "dettagli_costieri": 18,
+      "barche": 14,
+      "velieri": 10,
+      "nave_media": 8,
+      "nave_piccola": 10,
+      "vele": 10,
+      "bandiere": 8,
+      "carovane": 6,
+      "carri": 8,
+      "carrozze": 4,
+      "interni": 14,
+      "icone": 14
+    },
+    "terreni": {
+      "categoria": "terreno_deserto",
+      "quanti": 10
+    },
+    "personaggi": {
+      "pool": [
+        "src/mini",
+        "src/accessori",
+        "src/animali"
+      ],
+      "escludi": [
+        "@elmo_cornuto",
+        "@tricorno",
+        "@bandana",
+        "MiniNun",
+        "MiniGraveDigger",
+        "orso_bruno",
+        "lupo_grigio",
+        "MiniBear",
+        "MiniDeer1",
+        "MiniDeer2",
+        "MiniBoar",
+        "MiniFox",
+        "MiniWolf",
+        "Vik",
+        "Ban",
+        "ladro_asino"
+      ]
+    },
+    "_nomi": "Prima passata del 29/09 (task 2): la citta' della Costa ha le sue case (pianta_costa.js, CASE) coi nomi del catalogo; qui solo i nomi che il codice comune cerca: il caravanserraglio (edificio_taverna, le osterie e la loro stanza), la Lanterna Rossa (casa_rossa) e la forgia (edificio_bottega). Scartati i pezzi con lo sfondo del riquadro (edifici_deserto_06-10, 13, 15, 18-20, 22, 25) e i cactus. terreni_nomi: le vie lastricate e gli sterrati (pietra, ghiaia) diventano il lastricato chiaro e la terra spaccata del catalogo; la sabbia e' quella di Valdarno. tinte: le mura, le torri e le porte di Valdarno (disegnate da codice, grigie) in arenaria. La curatela resta tua. Gli stendardi del borgo (azzurro con la croce, gonfalone blu) diventano bandiere della costa (bandiere_04, bandiere_07): sulle torri una croce era fuori posto.",
+    "nomi": {
+      "edificio_taverna": "edifici_deserto_17",
+      "casa_rossa": "edifici_deserto_33",
+      "edificio_bottega": "edifici_deserto_28",
+      "stendardo_azzurro": "bandiere_04",
+      "gonfalone_blu": "bandiere_07"
+    },
+    "terreni_nomi": {
+      "pietra": "terreno_deserto_06",
+      "ghiaia": "terreno_deserto_08"
+    },
+    "tinte": {
+      "cinta_campata": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "cinta_cima": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "cinta_torre": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "cinta_torre_cima": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "porta_citta": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "porta_torre": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "porta_torre_fronte": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "porta_fianco": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "muretto": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "cippo": [
+        1.22,
+        1.0,
+        0.72
+      ],
+      "soglia_porta": [1.22, 1.0, 0.72]
+    },
+    "_ritocchi_meta": "14/10 (tuo: \"non riesci a sistemarlo tu?\", foto del 07/10): il palazzo dell'emiro (edifici_deserto_02) aveva due rettangoli neri dietro le bandiere. Non era il ritaglio: e' riempi_interni (innesta_nano.py), che prende per 'dentro la casa' il vuoto con la bandiera sopra e le torri ai lati e lo riempie di buio. Qui, dopo il riempimento, si svuotano solo quei pixel (1.024, in pixel dello sprite 149x129; le finestre ad arco restano scure). Provino out/provino_palazzo_emiro.png",
+    "ritocchi_meta": {
+      "edifici_deserto_02": {
+        "via": [[60,3,61,5],[65,3,66,4],[66,4,67,5],[56,7,59,8],[67,7,71,8],[54,8,56,9],[71,8,74,9],[134,8,139,9],[10,9,15,10],[52,9,54,10],[74,9,75,10],[139,9,141,10],[15,10,16,11],[49,10,52,11],[75,10,78,11],[18,11,20,12],[48,11,49,12],[78,11,79,12],[17,12,18,13],[47,12,48,13],[105,12,106,14],[111,12,117,13],[45,13,47,14],[117,13,118,14],[44,14,45,15],[43,15,44,16],[106,15,107,16],[23,16,25,18],[83,16,84,17],[42,17,43,18],[84,17,85,18],[106,17,107,33],[41,18,42,19],[85,19,86,20],[125,19,126,22],[40,20,41,21],[39,21,40,22],[133,21,140,22],[10,22,15,23],[23,22,25,23],[87,22,88,23],[126,22,127,25],[139,22,147,23],[10,23,16,24],[19,23,20,24],[21,23,25,24],[134,23,135,31],[10,24,25,34],[87,24,88,25],[114,25,115,26],[125,25,126,26],[88,26,89,35],[110,26,116,27],[123,26,127,27],[110,27,127,33],[128,32,129,33],[134,32,135,33],[4,33,6,34],[110,33,126,35],[11,34,25,35],[106,34,107,35],[127,34,128,35],[135,34,136,35],[13,35,25,37],[111,35,127,36],[136,35,137,36],[1,36,2,37],[34,36,35,37],[39,36,40,37],[86,36,88,37],[93,36,94,37],[99,36,100,37],[111,36,126,37],[137,36,138,37],[14,37,25,39],[35,37,36,38],[39,37,41,38],[86,37,87,38],[92,37,93,38],[100,37,101,38],[113,37,125,39],[39,38,42,40],[85,38,87,39],[101,38,102,49],[103,38,104,39],[138,38,139,39],[15,39,26,40],[36,39,37,42],[84,39,87,41],[114,39,123,40],[16,40,26,41],[39,40,41,41],[115,40,123,41],[140,40,141,46],[16,41,25,43],[39,41,40,45],[86,41,87,45],[116,41,123,46],[37,42,38,45],[16,43,26,45],[35,43,36,44],[91,43,92,48],[16,45,18,47],[22,45,26,46],[36,45,42,46],[85,45,87,47],[36,46,37,48],[39,46,42,47],[116,46,124,48],[15,47,18,61],[89,48,90,49],[115,48,124,49],[138,48,139,49],[25,49,26,50],[36,49,37,50],[90,49,92,50],[101,49,103,55],[114,49,124,53],[138,50,139,116],[114,53,125,57],[102,55,103,56],[101,56,103,57],[102,57,103,58],[120,57,125,58],[120,58,121,59],[140,122,141,123],[2,123,4,124],[139,123,140,124],[1,124,2,127],[139,125,140,127],[125,127,126,128],[100,128,101,129],[103,128,104,129],[125,128,127,129]]
+      }
+    }
+  },
+  "fiordo": {
+    "titolo": "Il fiordo",
+    "categorie": {
+      "edifici_nord": 46,
+      "tetti": 10,
+      "props_neve": 30,
+      "props": 24,
+      "accampamenti": 12,
+      "natura_neve": 16,
+      "interni": 12,
+      "navi_nord": 34,
+      "barche": 14,
+      "vele": 12,
+      "bandiere": 8,
+      "dettagli_navi": 12,
+      "accessori_nave": 10,
+      "alberi": 8,
+      "porto": 10,
+      "carri": 6,
+      "icone": 14
+    },
+    "terreni": {
+      "categoria": "terreno_neve",
+      "quanti": 10
+    },
+    "personaggi": {
+      "pool": [
+        "src/mini",
+        "src/accessori",
+        "src/animali"
+      ],
+      "escludi": [
+        "@turbante",
+        "@tricorno",
+        "@bandana",
+        "cammello",
+        "cammello_chiaro",
+        "scorpione",
+        "elefante",
+        "serpente",
+        "capra",
+        "capra_salto",
+        "Sar",
+        "@elmo_cornuto",
+        "@colbacco",
+        "ladro_cammello",
+        "ladro_dromedario"
+      ]
+    },
+    "_pirati": "07/10: i Pir* entrano nell'atlante del Fiordo per la nave dell'atto III (i pirati svernano nella baia, la stiva e il ponte sono stanze caricate in ogni citta'). Per le strade non ci sono: il cast e' in pianta_fiordo.js.",
+    "_nomi": "Prima passata del 25/09 sera (F3), da rifare con la curatela: il mondo chiede i nomi di Valdarno, qui alcuni diventano case del nord (le innevate e quelle di legno; scartati i pezzi con cactus e palme). Chi non e' qui resta il pezzo di Valdarno. terreni_nomi: l'erba diventa neve (tile 'neve' di Valdarno): quelle del catalogo del fiordo sono griglie, non tile. terreni_nomi.pietra = '@assi' (25/09 notte): le vie lastricate del fiordo sono strade di assi, disegnate da pezzi_nord.tile_assi.",
+    "_natura": "25/09 notte, stile fiordo del generatore: gli alberi e i sassi che il mondo chiede diventano quelli innevati del catalogo del fiordo (natura_neve_*): pini 04, 05, 07, 08, 11; alberi spogli 00; scogli 01, 02, 12; cespuglio 13 e mucchio di neve 14 (nomi nuovi, li chiede solo lo stile fiordo). Stanno in 'nomi' con le case: la curatela resta tua.",
+    "nomi": {
+      "edificio_casa": "edifici_nord_15",
+      "casa_alta": "edifici_nord_00",
+      "casa_alta_b": "edifici_nord_01",
+      "casa_tetto_rosso": "edifici_nord_17",
+      "casa_stretta": "edifici_nord_35",
+      "casa_blu": "edifici_nord_33",
+      "casa_rossa": "edifici_nord_14",
+      "edificio_bottega": "edifici_nord_06",
+      "edificio_taverna": "edifici_nord_25",
+      "palazzo_lungo": "edifici_nord_07",
+      "municipio": "edifici_nord_41",
+      "fienile": "edifici_nord_04",
+      "edificio_stalla": "edifici_nord_09",
+      "palazzo_gotico": "edifici_nord_08",
+      "palazzo_torre": "edifici_nord_27",
+      "palazzo_blu": "edifici_nord_37",
+      "edificio_chiesa": "edifici_nord_20",
+      "pino": "natura_neve_04",
+      "pino_b": "natura_neve_05",
+      "abete": "natura_neve_07",
+      "faggio_pc": "natura_neve_08",
+      "faggio_pc_b": "natura_neve_11",
+      "pioppo_pc": "natura_neve_04",
+      "pioppo_pc_b": "natura_neve_05",
+      "frassino": "natura_neve_00",
+      "scoglio_a": "natura_neve_01",
+      "scoglio_b": "natura_neve_02",
+      "scoglio_c": "natura_neve_12",
+      "cespuglio_neve": "natura_neve_13",
+      "mucchio_neve": "natura_neve_14"
+    },
+    "terreni_nomi": {
+      "erba": "neve",
+      "pietra": "@assi"
+    },
+    "_ritocchi": "25/09 notte ('fumo fermo finto da sprite non va bene e nemmeno fuochi'): in pixel dello sprite, il fumo dipinto da cancellare (via: [x0, y0, x1, y1]), i camini da cui esce il fumo animato (camini: [x, y]; nelle case lunghe senza camino esce dal colmo, come dal foro delle case vichinghe) e i fuochi su cui va la fiamma animata (fiamme: [x, base, altezza])",
+    "ritocchi": {
+      "edifici_nord_05": {
+        "via": [
+          [
+            82,
+            0,
+            102,
+            25
+          ]
+        ],
+        "camini": [
+          [
+            88,
+            27
+          ]
+        ]
+      },
+      "edifici_nord_06": {
+        "via": [
+          [
+            52,
+            0,
+            64,
+            21
+          ]
+        ],
+        "camini": [
+          [
+            58,
+            22
+          ]
+        ],
+        "fiamme": [
+          [
+            41,
+            79,
+            9
+          ]
+        ]
+      },
+      "edifici_nord_10": {
+        "via": [
+          [
+            66,
+            0,
+            88,
+            42
+          ]
+        ],
+        "camini": [
+          [
+            76,
+            44
+          ]
+        ],
+        "fiamme": [
+          [
+            37,
+            108,
+            13
+          ]
+        ]
+      },
+      "edifici_nord_16": {
+        "via": [
+          [
+            62,
+            0,
+            78,
+            38
+          ]
+        ],
+        "camini": [
+          [
+            70,
+            40
+          ]
+        ]
+      },
+      "edifici_nord_19": {
+        "via": [
+          [
+            54,
+            0,
+            73,
+            36
+          ]
+        ],
+        "camini": [
+          [
+            65,
+            38
+          ]
+        ]
+      },
+      "edifici_nord_07": {
+        "camini": [
+          [
+            9,
+            4
+          ]
+        ]
+      },
+      "edifici_nord_24": {
+        "camini": [
+          [
+            21,
+            4
+          ]
+        ],
+        "fiamme": [
+          [
+            41,
+            78,
+            10
+          ]
+        ]
+      },
+      "edifici_nord_04": {
+        "camini": [
+          [
+            60,
+            4
+          ]
+        ]
+      },
+      "edifici_nord_09": {
+        "camini": [
+          [
+            67,
+            5
+          ]
+        ]
+      },
+      "edifici_nord_12": {
+        "camini": [
+          [
+            57,
+            4
+          ]
+        ]
+      },
+      "edifici_nord_26": {
+        "camini": [
+          [
+            46,
+            5
+          ]
+        ]
+      },
+      "edifici_nord_25": {
+        "camini": [
+          [
+            50,
+            5
+          ]
+        ],
+        "fiamme": [
+          [
+            50,
+            62,
+            12
+          ]
+        ]
+      },
+      "edifici_nord_36": {
+        "camini": [
+          [
+            46,
+            4
+          ]
+        ],
+        "fiamme": [
+          [
+            40,
+            70,
+            11
+          ]
+        ]
+      },
+      "edifici_nord_32": {
+        "camini": [
+          [
+            34,
+            4
+          ]
+        ]
+      },
+      "edifici_nord_00": {
+        "camini": [
+          [
+            45,
+            12
+          ]
+        ],
+        "fiamme": [
+          [
+            42,
+            109,
+            7
+          ]
+        ]
+      },
+      "falo": {
+        "fiamme": [
+          [
+            16,
+            18,
+            13
+          ]
+        ]
+      },
+      "braciere": {
+        "fiamme": [
+          [
+            4.5,
+            4,
+            5
+          ]
+        ]
+      },
+      "torcia": {
+        "fiamme": [
+          [
+            3.5,
+            3,
+            4
+          ]
+        ]
+      },
+      "edifici_nord_28": {
+        "fiamme": [
+          [
+            42,
+            89,
+            16
+          ]
+        ]
+      },
+      "k_rpg_00_13": {
+        "fiamme": [
+          [
+            6.5,
+            10,
+            4
+          ]
+        ]
+      },
+      "k_rpg_00_14": {
+        "fiamme": [
+          [
+            6,
+            10,
+            4
+          ]
+        ]
+      },
+      "k_rpg_08_14": {
+        "fiamme": [
+          [
+            7.5,
+            10,
+            5
+          ]
+        ]
+      },
+      "k_rpg_08_15": {
+        "fiamme": [
+          [
+            7.5,
+            10,
+            5
+          ]
+        ]
+      },
+      "focolare_lungo": {
+        "fiamme": [
+          [
+            8,
+            5,
+            5
+          ],
+          [
+            15,
+            5,
+            6
+          ],
+          [
+            23,
+            5,
+            5
+          ]
+        ]
+      }
+    },
+    "_ritocchi_meta": "30/09: il fumo animato dalle case meta (innesta_nano.py, LOTTI_CITTA), in pixel dello sprite innestato: dal camino dove c'e' (vik_casa_b), dal colmo nelle altre. La stalla e il cantiere senza fumo. Il tempio (vik_hof) e il granaio senza fumo.",
+    "ritocchi_meta": {
+      "vik_casa_lunga": {
+        "camini": [
+          [
+            24,
+            9
+          ]
+        ]
+      },
+      "vik_casa_a": {
+        "camini": [
+          [
+            28,
+            3
+          ]
+        ]
+      },
+      "vik_casa_b": {
+        "camini": [
+          [
+            37,
+            2
+          ]
+        ]
+      },
+      "vik_casa_c": {
+        "camini": [
+          [
+            26,
+            3
+          ]
+        ]
+      },
+      "edificio_taverna": {
+        "camini": [
+          [
+            29,
+            4
+          ]
+        ]
+      },
+      "vik_sala": {
+        "camini": [
+          [
+            21,
+            3
+          ]
+        ]
+      },
+      "vik_casa_torba": {
+        "camini": [
+          [
+            30,
+            4
+          ]
+        ]
+      },
+      "vik_capanna_pesce": {
+        "camini": [
+          [
+            25,
+            3
+          ]
+        ]
+      },
+      "vik_casa_ricca": {
+        "camini": [
+          [
+            30,
+            7
+          ]
+        ]
+      },
+      "vik_capanna_tonda": {
+        "camini": [
+          [
+            21,
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "_personaggi_per_area": "26/09: i personaggi del character studio per fazione (Vik vichinghi, Ban banditi, Sar saraceni, Pir pirati) stanno nel pool di tutti; ogni citta' esclude quelli fuori posto (escludi: per pezzo di nome). Valdarno: generici + banditi. Fiordo: generici + vichinghi + banditi. Costa saracena: generici + saraceni + pirati (i pirati fanno i banditi). Chi fa cosa lo dice CAST nella pianta."
+}

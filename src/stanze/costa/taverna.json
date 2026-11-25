@@ -1,0 +1,233 @@
+{
+  "tipologia": "taverna",
+  "nome": "@stanza.costa.taverna.nome",
+  "ingresso": "@stanza.costa.taverna.ingresso",
+  "combattimento": false,
+  "_nota": "La Costa saracena (29-30/09): fa la parte dell'osteria. Terra battuta e pareti di arenaria, niente fuoco (un incensiere al posto del camino), il banco del custode, i tavoli bassi sui tappeti stesi a terra (prima i tappeti erano in piedi e coprivano la gente, tua foto del 30/09), sacchi, giare e casse delle carovane al posto delle botti. Prima passata, da rifare con la curatela.",
+  "edifici": [
+    "edificio_taverna"
+  ],
+  "celle": [
+    12,
+    8
+  ],
+  "porta": 6,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06"
+  ],
+  "parete": [
+    "rpg:15_18",
+    "rpg:16_17"
+  ],
+  "bordo": "rpg:16_17",
+  "arredo": [
+    {
+      "pezzo": "props_deserto_17",
+      "cella": [
+        2,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "tendoni_03",
+      "cella": [
+        0,
+        0
+      ]
+    },
+    {
+      "pezzo": "tendoni_00",
+      "cella": [
+        5,
+        0
+      ]
+    },
+    {
+      "pezzo": "props_deserto_16",
+      "cella": [
+        9,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_deserto_21",
+      "cella": [
+        10,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_deserto_21",
+      "cella": [
+        11,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_deserto_19",
+      "cella": [
+        11,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        8,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_27",
+      "cella": [
+        9,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        10,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:04_11",
+      "cella": [
+        2,
+        4
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        5,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:04_11",
+      "cella": [
+        9,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_deserto_10",
+      "cella": [
+        0,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_deserto_13",
+      "cella": [
+        0,
+        7
+      ],
+      "solido": true
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        2,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 16,
+      "tremola": true
+    },
+    {
+      "cella": [
+        9,
+        4
+      ],
+      "colore": [
+        1.0,
+        0.7,
+        0.4
+      ],
+      "raggio": 12
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "MiniMerchant",
+      "cella": [
+        9,
+        1
+      ],
+      "nome": "@stanza.costa.taverna.residenti.0.nome",
+      "parla": true
+    },
+    {
+      "sprite": "MiniWorker",
+      "cella": [
+        3,
+        5
+      ]
+    },
+    {
+      "sprite": "MiniSuspiciousMerchant",
+      "cella": [
+        6,
+        4
+      ],
+      "flip": true
+    },
+    {
+      "sprite": "MiniOldMan",
+      "cella": [
+        8,
+        6
+      ]
+    }
+  ],
+  "voci": [
+    "@stanza.costa.taverna.voci.0",
+    "@stanza.costa.taverna.voci.1",
+    "@stanza.costa.taverna.voci.2"
+  ],
+  "tappeto": {
+    "base": "rpg:19_10",
+    "riquadri": [
+      [
+        1,
+        4,
+        3,
+        5
+      ],
+      [
+        4,
+        3,
+        6,
+        4
+      ],
+      [
+        8,
+        5,
+        10,
+        6
+      ]
+    ]
+  }
+}

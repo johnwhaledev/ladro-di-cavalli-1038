@@ -1,0 +1,24 @@
+{
+  "tipologia": "tenda",
+  "nome": "@stanza.tenda.nome",
+  "ingresso": "@stanza.tenda.ingresso",
+  "luogo": "tenda",
+  "combattimento": false,
+  "celle": [6, 5],
+  "porta": 3,
+  "pavimento": ["rpg:00_06", "rpg:01_06", "rpg:00_06"],
+  "parete": ["rpg:00_11", "rpg:00_11", "rpg:00_11"],
+  "bordo": "rpg:16_33",
+  "arredo": [
+    { "tile": "rpg:03_12", "cella": [1, 1], "solido": true, "azione": "riposa" },
+    { "tile": "rpg:00_23", "cella": [0, 0], "solido": true },
+    { "tile": "rpg:02_25", "cella": [5, 0], "solido": true },
+    { "tile": "rpg:00_16", "cella": [4, 1], "solido": true, "azione": "salva" },
+    { "tile": "rpg:07_20", "cella": [3, 0] }
+  ],
+  "luci": [
+    { "cella": [3, 0], "colore": [1.0, 0.72, 0.4], "raggio": 11, "tremola": true }
+  ],
+  "residenti": [],
+  "voci": []
+}

@@ -1,0 +1,306 @@
+{
+  "tipologia": "taverna",
+  "nome": "@stanza.fiordo.taverna.nome",
+  "ingresso": "@stanza.fiordo.taverna.ingresso",
+  "combattimento": false,
+  "_nota": "Il fiordo (25/09 notte): le tavolate lunghe, il focolare in mezzo, le botti dell'idromele, gli scudi.",
+  "edifici": [
+    "edificio_taverna"
+  ],
+  "celle": [
+    12,
+    8
+  ],
+  "porta": 6,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:02_08"
+  ],
+  "parete": [
+    "rpg:16_35",
+    "rpg:17_35"
+  ],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_23",
+      "cella": [
+        1,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "scudo_parete_b",
+      "cella": [
+        3,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_a",
+      "cella": [
+        5,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_c",
+      "cella": [
+        7,
+        0
+      ]
+    },
+    {
+      "tile": "rpg:00_23",
+      "cella": [
+        11,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        11,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        8,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_27",
+      "cella": [
+        9,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        10,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "focolare_lungo",
+      "cella": [
+        4,
+        4
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "focolare_lungo",
+      "cella": [
+        6,
+        4
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        2,
+        4
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        8,
+        4
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_23",
+      "cella": [
+        0,
+        7
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_19",
+      "cella": [
+        3,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        4,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_21",
+      "cella": [
+        5,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_22",
+      "cella": [
+        6,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_19",
+      "cella": [
+        1,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        2,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_22",
+      "cella": [
+        3,
+        6
+      ],
+      "solido": true
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        5,
+        4
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 16,
+      "tremola": true
+    },
+    {
+      "cella": [
+        9,
+        2
+      ],
+      "colore": [
+        1.0,
+        0.75,
+        0.45
+      ],
+      "raggio": 10
+    },
+    {
+      "cella": [
+        1,
+        1
+      ],
+      "colore": [
+        1.0,
+        0.7,
+        0.4
+      ],
+      "raggio": 8
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "MiniMerchant",
+      "cella": [
+        9,
+        1
+      ],
+      "nome": "@stanza.fiordo.taverna.residenti.0.nome",
+      "parla": true
+    },
+    {
+      "sprite": "MiniWorker",
+      "cella": [
+        3,
+        3
+      ]
+    },
+    {
+      "sprite": "MiniVillagerWoman",
+      "cella": [
+        6,
+        3
+      ],
+      "flip": true
+    },
+    {
+      "sprite": "MiniOldMan",
+      "cella": [
+        5,
+        5
+      ]
+    },
+    {
+      "sprite": "MiniSwordMan",
+      "cella": [
+        9,
+        6
+      ],
+      "flip": true
+    }
+  ],
+  "voci": [
+    "@stanza.fiordo.taverna.voci.0",
+    "@stanza.fiordo.taverna.voci.1",
+    "@stanza.fiordo.taverna.voci.2",
+    "@stanza.fiordo.taverna.voci.3",
+    "@stanza.fiordo.taverna.voci.4",
+    "@stanza.fiordo.taverna.voci.5"
+  ]
+}

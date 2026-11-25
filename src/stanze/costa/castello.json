@@ -1,0 +1,50 @@
+{
+  "tipologia": "castello",
+  "nome": "@stanza.costa.castello.nome",
+  "ingresso": "@stanza.costa.castello.ingresso",
+  "luogo": "castello",
+  "combattimento": true,
+  "_nota": "La Costa saracena (29/09): pareti e pavimento di arenaria, il seggio dell'emiro sul tappeto rosso, i tappeti appesi alle pareti, incensieri al posto dei candelabri, giare e cesti di frutta al posto di armadi e scrittoi (pezzi del catalogo della Costa). Prima passata, da rifare con la curatela.",
+  "celle": [13, 9],
+  "porta": 6,
+  "pavimento": ["rpg:02_07", "rpg:03_07", "rpg:02_07"],
+  "parete": ["rpg:15_18", "rpg:16_17"],
+  "bordo": "rpg:16_17",
+  "tappeto": { "base": "rpg:19_10", "riquadri": [[5, 1, 7, 8]] },
+  "arredo": [
+    { "tile": "rpg:02_19", "cella": [6, 1], "solido": true },
+    { "pezzo": "tendoni_00", "cella": [4, 0] },
+    { "pezzo": "tendoni_00", "cella": [8, 0] },
+    { "pezzo": "tendoni_03", "cella": [1, 0] },
+    { "pezzo": "tendoni_03", "cella": [11, 0] },
+    { "pezzo": "props_deserto_17", "cella": [5, 1], "solido": true },
+    { "pezzo": "props_deserto_17", "cella": [7, 1], "solido": true },
+    { "pezzo": "props_deserto_10", "cella": [0, 1], "solido": true },
+    { "pezzo": "props_deserto_13", "cella": [0, 2], "solido": true },
+    { "pezzo": "props_deserto_16", "cella": [12, 1], "solido": true },
+    { "pezzo": "props_deserto_07", "cella": [11, 1] },
+    { "pezzo": "props_deserto_19", "cella": [10, 5], "solido": true },
+    { "pezzo": "props_deserto_21", "cella": [11, 5], "solido": true },
+    { "pezzo": "rastrelliera", "cella": [0, 6], "solido": true },
+    { "pezzo": "props_deserto_12", "cella": [0, 8], "solido": true },
+    { "pezzo": "props_deserto_12", "cella": [12, 8], "solido": true }
+  ],
+  "luci": [
+    { "cella": [5, 1], "colore": [1.0, 0.7, 0.4], "raggio": 10, "tremola": true },
+    { "cella": [7, 1], "colore": [1.0, 0.7, 0.4], "raggio": 10, "tremola": true },
+    { "cella": [12, 1], "colore": [1.0, 0.85, 0.4], "raggio": 7 },
+    { "cella": [6, 5], "colore": [0.95, 0.8, 0.6], "raggio": 14 }
+  ],
+  "residenti": [
+    { "sprite": "SarEmiro", "cella": [6, 2], "nome": "@committenti.atto4.emiro", "parla": true, "committente": "emiro" },
+    { "sprite": "MiniNobleWoman", "cella": [8, 2], "flip": true, "nome": "@stanza.costa.castello.residenti.1.nome" },
+    { "sprite": "SarScimitarra", "cella": [4, 3] },
+    { "sprite": "SarLanciere", "cella": [9, 3], "flip": true },
+    { "sprite": "MiniVillagerWoman", "cella": [10, 7], "flip": true }
+  ],
+  "voci": [
+    "@stanza.costa.castello.voci.0",
+    "@stanza.costa.castello.voci.1",
+    "@stanza.costa.castello.voci.2"
+  ]
+}

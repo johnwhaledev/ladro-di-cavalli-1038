@@ -1,0 +1,54 @@
+{
+  "tipologia": "chiesa",
+  "nome": "@stanza.costa.chiesa.nome",
+  "ingresso": "@stanza.costa.chiesa.ingresso",
+  "luogo": "chiesa",
+  "combattimento": true,
+  "_nota": "La Costa saracena (29/09): fa la parte della pieve (ci si cura con un'offerta, 'cure'). Pareti di arenaria, pavimento chiaro, le panche di pietra lungo i lati, i tappeti appesi, incensieri e giare d'acqua; niente crocifisso ne' candelabri. Prima passata, da rifare con la curatela.",
+  "celle": [11, 9],
+  "porta": 5,
+  "pavimento": ["rpg:00_08", "rpg:01_08", "rpg:00_08"],
+  "parete": ["rpg:15_18", "rpg:16_17"],
+  "bordo": "rpg:16_17",
+  "tappeto": { "base": "rpg:19_10", "riquadri": [[4, 2, 6, 8]] },
+  "arredo": [
+    { "pezzo": "props_deserto_13", "cella": [5, 1], "solido": true },
+    { "pezzo": "props_deserto_17", "cella": [4, 1] },
+    { "pezzo": "props_deserto_17", "cella": [6, 1] },
+    { "pezzo": "tendoni_00", "cella": [0, 0] },
+    { "pezzo": "tendoni_00", "cella": [10, 0] },
+    { "pezzo": "props_deserto_10", "cella": [0, 2], "solido": true },
+    { "pezzo": "props_deserto_12", "cella": [10, 2], "solido": true },
+    { "tile": "rpg:04_23", "cella": [1, 3], "solido": true },
+    { "tile": "rpg:04_24", "cella": [2, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [3, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [7, 3], "solido": true },
+    { "tile": "rpg:04_24", "cella": [8, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [9, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [1, 5], "solido": true },
+    { "tile": "rpg:04_24", "cella": [2, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [3, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [7, 5], "solido": true },
+    { "tile": "rpg:04_24", "cella": [8, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [9, 5], "solido": true }
+  ],
+  "luci": [
+    { "cella": [4, 1], "colore": [1.0, 0.72, 0.4], "raggio": 9, "tremola": true },
+    { "cella": [6, 1], "colore": [1.0, 0.72, 0.4], "raggio": 9, "tremola": true },
+    { "cella": [5, 6], "colore": [1.0, 0.8, 0.55], "raggio": 12 }
+  ],
+  "residenti": [
+    { "sprite": "MiniMage", "cella": [5, 2], "nome": "@stanza.costa.chiesa.residenti.0.nome",
+      "parla": true, "cure": true },
+    { "sprite": "MiniOldWoman", "cella": [8, 2], "flip": true, "nome": "@stanza.costa.chiesa.residenti.1.nome",
+      "parla": true },
+    { "sprite": "MiniOldMan", "cella": [2, 4] },
+    { "sprite": "MiniPeasant", "cella": [8, 6], "flip": true },
+    { "sprite": "MiniVillagerMan", "cella": [2, 6] }
+  ],
+  "voci": [
+    "@stanza.costa.chiesa.voci.0",
+    "@stanza.costa.chiesa.voci.1",
+    "@stanza.costa.chiesa.voci.2"
+  ]
+}

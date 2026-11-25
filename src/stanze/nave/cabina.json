@@ -1,0 +1,32 @@
+{
+  "tipologia": "cabina",
+  "nome": "@stanza.nave.cabina.nome",
+  "ingresso": "@stanza.nave.cabina.ingresso",
+  "luogo": "nave",
+  "combattimento": false,
+  "_nota": "08/10 (tuo ok): la cabina sotto il castello di poppa della galea; ci si entra dal ponte con E sulla porta davanti ai timoni (ponte.json, cella 3,5), si esce dal vano in fondo e si torna sul ponte li' davanti. La cuccetta, il tavolo delle carte con la sedia, la cassa del bottino e la rastrelliera delle armi buone: il posto del passo 2 o del passo 4 (da decidere). Vuota: il capitano sta ai timoni. Tile e pezzi gia' usati dalle stanze.",
+  "celle": [9, 5],
+  "uscite": [
+    { "cella": 4, "verso": "ponte", "dice": "@stanza.nave.cabina.uscite.0.dice" }
+  ],
+  "pavimento": ["rpg:02_08", "rpg:03_08", "rpg:04_08", "rpg:02_08"],
+  "parete": ["rpg:15_35", "rpg:16_35"],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    { "tile": "rpg:03_12", "cella": [1, 1], "solido": true },
+    { "tile": "rpg:07_18", "cella": [2, 0] },
+    { "tile": "rpg:07_18", "cella": [6, 0] },
+    { "pezzo": "tavolo", "cella": [4, 2], "solido": true },
+    { "tile": "rpg:03_21", "cella": [3, 2] },
+    { "pezzo": "cassa", "cella": [7, 1], "solido": true },
+    { "pezzo": "rastrelliera", "cella": [8, 3], "solido": true },
+    { "tile": "rpg:00_22", "cella": [0, 4], "solido": true },
+    { "tile": "rpg:00_23", "cella": [8, 0], "solido": true }
+  ],
+  "luci": [
+    { "cella": [2, 0], "colore": [1.0, 0.6, 0.3], "raggio": 8, "tremola": true },
+    { "cella": [6, 0], "colore": [1.0, 0.6, 0.3], "raggio": 8, "tremola": true }
+  ],
+  "residenti": [],
+  "voci": ["@stanza.nave.cabina.voci.0"]
+}

@@ -1,0 +1,207 @@
+{
+  "tipologia": "fucina",
+  "nome": "@stanza.fiordo.fucina.nome",
+  "ingresso": "@stanza.fiordo.fucina.ingresso",
+  "luogo": "fucina",
+  "combattimento": false,
+  "celle": [
+    10,
+    7
+  ],
+  "porta": 5,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:02_08"
+  ],
+  "parete": [
+    "rpg:16_35",
+    "rpg:17_35"
+  ],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    {
+      "tile": "rpg:00_14",
+      "cella": [
+        1,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_13",
+      "cella": [
+        2,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_15",
+      "cella": [
+        2,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:05_16",
+      "cella": [
+        4,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:05_17",
+      "cella": [
+        5,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:05_16",
+      "cella": [
+        9,
+        2
+      ],
+      "solido": true,
+      "flip": true
+    },
+    {
+      "tile": "rpg:06_24",
+      "cella": [
+        8,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_23",
+      "cella": [
+        9,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        6,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_27",
+      "cella": [
+        7,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_26",
+      "cella": [
+        8,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "scudo_parete_b",
+      "cella": [
+        6,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_a",
+      "cella": [
+        7,
+        0
+      ]
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        1,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.45,
+        0.18
+      ],
+      "raggio": 14,
+      "tremola": true
+    },
+    {
+      "cella": [
+        2,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.45,
+        0.18
+      ],
+      "raggio": 14,
+      "tremola": true
+    },
+    {
+      "cella": [
+        7,
+        2
+      ],
+      "colore": [
+        1.0,
+        0.75,
+        0.45
+      ],
+      "raggio": 10
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "VikFabbro",
+      "cella": [
+        7,
+        2
+      ],
+      "nome": "@nomi.fabbro_fiordo",
+      "parla": true,
+      "committente": "fabbro"
+    },
+    {
+      "sprite": "MiniWorker",
+      "cella": [
+        3,
+        2
+      ],
+      "nome": "@stanza.fiordo.fucina.residenti.1.nome"
+    }
+  ],
+  "voci": [],
+  "_nota": "Il fiordo (25/09 notte): gli arredi di Valdarno in una casa di tavole e terra battuta."
+}

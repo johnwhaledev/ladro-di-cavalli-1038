@@ -1,0 +1,229 @@
+{
+  "tipologia": "chiesa",
+  "nome": "@stanza.fiordo.chiesa.nome",
+  "ingresso": "@stanza.fiordo.chiesa.ingresso",
+  "luogo": "chiesa",
+  "combattimento": true,
+  "_nota": "Il fiordo (25/09 notte): il tempio con i tre idoli, il fuoco dell'altare, i pali. Il goði cura come il pievano (cure), la veggente parla come suor Agnese.",
+  "celle": [
+    11,
+    9
+  ],
+  "porta": 5,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:02_08"
+  ],
+  "parete": [
+    "rpg:16_35",
+    "rpg:17_35"
+  ],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    {
+      "pezzo": "idolo",
+      "cella": [
+        5,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "idolo",
+      "cella": [
+        3,
+        0
+      ],
+      "solido": true,
+      "flip": true
+    },
+    {
+      "pezzo": "idolo",
+      "cella": [
+        7,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "braciere",
+      "cella": [
+        5,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        1,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        9,
+        2
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        1,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        9,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_23",
+      "cella": [
+        10,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "scudo_parete_a",
+      "cella": [
+        1,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_c",
+      "cella": [
+        9,
+        0
+      ]
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        5,
+        2
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 15,
+      "tremola": true
+    },
+    {
+      "cella": [
+        3,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.7,
+        0.4
+      ],
+      "raggio": 8
+    },
+    {
+      "cella": [
+        7,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.7,
+        0.4
+      ],
+      "raggio": 8
+    },
+    {
+      "cella": [
+        5,
+        6
+      ],
+      "colore": [
+        0.9,
+        0.75,
+        0.55
+      ],
+      "raggio": 11
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "MiniArchMage",
+      "cella": [
+        5,
+        3
+      ],
+      "nome": "@stanza.fiordo.chiesa.residenti.0.nome",
+      "parla": true,
+      "cure": true
+    },
+    {
+      "sprite": "MiniOldWoman",
+      "cella": [
+        8,
+        2
+      ],
+      "flip": true,
+      "nome": "@committenti.atto2.veggente",
+      "parla": true,
+      "committente": "veggente"
+    },
+    {
+      "sprite": "MiniOldWoman",
+      "cella": [
+        2,
+        4
+      ]
+    },
+    {
+      "sprite": "MiniPeasant",
+      "cella": [
+        8,
+        6
+      ],
+      "flip": true
+    },
+    {
+      "sprite": "MiniOldMan",
+      "cella": [
+        3,
+        7
+      ]
+    }
+  ],
+  "frasi_cura": {
+    "sano": "@stanza.fiordo.chiesa.frasi_cura.sano",
+    "paga": "@stanza.fiordo.chiesa.frasi_cura.paga",
+    "carita": "@stanza.fiordo.chiesa.frasi_cura.carita"
+  },
+  "voci": [
+    "@stanza.fiordo.chiesa.voci.0",
+    "@stanza.fiordo.chiesa.voci.1",
+    "@stanza.fiordo.chiesa.voci.2",
+    "@stanza.fiordo.chiesa.voci.3"
+  ]
+}

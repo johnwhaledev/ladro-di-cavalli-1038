@@ -1,0 +1,58 @@
+{
+  "tipologia": "ponte",
+  "nome": "@stanza.nave.ponte.nome",
+  "ingresso": "@stanza.nave.ponte.ingresso",
+  "luogo": "nave",
+  "combattimento": true,
+  "_nota": "08/10, tua scelta del 07/10 (il ponte vero visto dall'alto, galea con due timoni): la stanza ha 'mare' e la disegna nave.js. Il ponte (nave_ponte, 44,7 unita') steso sul mare con la prua a levante, centrato nella stanza; si cammina solo dove 'calpestabile' ha '#' (fra le murate, misurato sul pezzo dell'atlante: file 4-6). La grata e' a x 9,5 z 5,5 (celle), il piede dell'albero a 12,9 5,5: lo sprite della vela sta a 13,09 perche' nel disegno l'albero e' 0,44 unita' a sinistra del centro. Il capitano ai timoni a poppa, i pirati sul ponte (gente vera: si combatte). Da qui si scende nella stiva con E sulla grata, si entra nella cabina del capitano con E sulla porta sotto il castello di poppa (08/10); la passerella (prova) rimette a terra. pavimento, parete e bordo non si disegnano: servono alla misura della cella e all'atlante. 09/10 (tua scelta): la porta della cabina tolta (sul disegno del ponte non c'era); la rastrelliera della sciabola (passo 4) a poppa accanto ai timoni, cella 3,6; la cabina resta fuori dal giro.",
+  "celle": [21, 11],
+  "camera": 58,
+  "mare": {
+    "ponte": "nave_ponte",
+    "albero": "nave_albero",
+    "centro": [10.5, 5.5],
+    "piede": [13.09, 5.48],
+    "poppa": 0.95,
+    "prua": 19.86,
+    "largo": 12.46,
+    "velocita": 3.2,
+    "remi": { "n": 6, "da": 4.2, "a": 12.2, "nord": 3.0, "sud": 7.95 }
+  },
+  "calpestabile": [
+    ".....................",
+    ".....................",
+    ".....................",
+    ".....................",
+    "..############.......",
+    "..###############....",
+    "..#############......",
+    ".....................",
+    ".....................",
+    ".....................",
+    "....................."
+  ],
+  "arrivi": { "stiva": [8, 5] },
+  "pavimento": ["rpg:02_08", "rpg:03_08", "rpg:04_08", "rpg:03_08"],
+  "parete": ["rpg:15_35", "rpg:16_35"],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    { "cella": [9, 5], "azione": "botola", "verso": "stiva", "dice": "@stanza.nave.ponte.arredo.0.dice" },
+    { "pezzo": "rastrelliera", "cella": [3, 6], "solido": true },
+    { "cella": [6, 6], "azione": "passerella", "dice": "@stanza.nave.ponte.arredo.2.dice" },
+    { "cella": [12, 5], "solido": true },
+    { "pezzo": "lanterna_palo", "cella": [2, 4], "solido": true },
+    { "pezzo": "lanterna_palo", "cella": [15, 5], "solido": true }
+  ],
+  "luci": [
+    { "cella": [2, 4], "colore": [1.0, 0.6, 0.3], "raggio": 10, "tremola": true },
+    { "cella": [15, 5], "colore": [1.0, 0.6, 0.3], "raggio": 10, "tremola": true }
+  ],
+  "residenti": [
+    { "sprite": "PirCapitano", "cella": [2, 5], "nome": "@stanza.nave.ponte.residenti.0.nome", "parla": true },
+    { "sprite": "PirSciabola", "cella": [6, 4] },
+    { "sprite": "PirSciabola", "cella": [11, 6], "flip": true },
+    { "sprite": "PirArpioniere", "cella": [14, 5], "flip": true },
+    { "sprite": "PirCannoniere", "cella": [5, 6] }
+  ],
+  "voci": ["@stanza.nave.ponte.voci.0"]
+}

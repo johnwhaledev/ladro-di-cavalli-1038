@@ -1,0 +1,59 @@
+{
+  "tipologia": "chiesa",
+  "nome": "@stanza.chiesa.nome",
+  "ingresso": "@stanza.chiesa.ingresso",
+  "luogo": "chiesa",
+  "combattimento": true,
+  "celle": [11, 9],
+  "porta": 5,
+  "pavimento": ["rpg:02_07", "rpg:03_07", "rpg:02_07"],
+  "parete": ["rpg:15_21", "rpg:16_21"],
+  "bordo": "rpg:16_33",
+  "tappeto": { "base": "rpg:19_10", "riquadri": [[4, 2, 6, 8]] },
+  "arredo": [
+    { "pezzo": "crocifisso", "cella": [5, 0] },
+    { "tile": "rpg:04_25", "cella": [5, 1], "solido": true },
+    { "tile": "rpg:07_19", "cella": [4, 1] },
+    { "tile": "rpg:07_19", "cella": [6, 1] },
+    { "tile": "rpg:08_40", "cella": [2, 0] },
+    { "tile": "rpg:08_40", "cella": [8, 0] },
+    { "tile": "rpg:03_50", "cella": [0, 0] },
+    { "tile": "rpg:03_50", "cella": [10, 0] },
+    { "tile": "rpg:08_19", "cella": [0, 2], "solido": true },
+    { "tile": "rpg:08_19", "cella": [10, 2], "solido": true },
+    { "tile": "rpg:04_23", "cella": [1, 3], "solido": true },
+    { "tile": "rpg:04_24", "cella": [2, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [3, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [7, 3], "solido": true },
+    { "tile": "rpg:04_24", "cella": [8, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [9, 3], "solido": true },
+    { "tile": "rpg:04_23", "cella": [1, 5], "solido": true },
+    { "tile": "rpg:04_24", "cella": [2, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [3, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [7, 5], "solido": true },
+    { "tile": "rpg:04_24", "cella": [8, 5], "solido": true },
+    { "tile": "rpg:04_23", "cella": [9, 5], "solido": true }
+  ],
+  "luci": [
+    { "cella": [4, 1], "colore": [1.0, 0.72, 0.4], "raggio": 9, "tremola": true },
+    { "cella": [6, 1], "colore": [1.0, 0.72, 0.4], "raggio": 9, "tremola": true },
+    { "cella": [2, 0], "colore": [0.55, 0.65, 1.0], "raggio": 10 },
+    { "cella": [8, 0], "colore": [0.55, 0.65, 1.0], "raggio": 10 },
+    { "cella": [5, 6], "colore": [1.0, 0.8, 0.55], "raggio": 12 }
+  ],
+  "residenti": [
+    { "sprite": "MiniArchMage", "cella": [5, 2], "nome": "@stanza.chiesa.residenti.0.nome",
+      "parla": true, "cure": true },
+    { "sprite": "MiniNun", "cella": [8, 2], "flip": true, "nome": "@stanza.chiesa.residenti.1.nome",
+      "parla": true },
+    { "sprite": "MiniOldWoman", "cella": [2, 4] },
+    { "sprite": "MiniPeasant", "cella": [8, 6], "flip": true },
+    { "sprite": "MiniOldMan", "cella": [2, 6] }
+  ],
+  "voci": [
+    "@stanza.chiesa.voci.0",
+    "@stanza.chiesa.voci.1",
+    "@stanza.chiesa.voci.2",
+    "@stanza.chiesa.voci.3"
+  ]
+}

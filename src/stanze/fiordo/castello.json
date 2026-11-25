@@ -1,0 +1,316 @@
+{
+  "tipologia": "castello",
+  "nome": "@stanza.fiordo.castello.nome",
+  "ingresso": "@stanza.fiordo.castello.ingresso",
+  "luogo": "castello",
+  "combattimento": true,
+  "_nota": "Il fiordo (25/09 notte): la sala lunga col focolare in mezzo, il seggio alto, i pali intagliati, gli scudi alle pareti. Il jarl e' VikJarl (26/09).",
+  "celle": [
+    15,
+    9
+  ],
+  "porta": 7,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:02_08"
+  ],
+  "parete": [
+    "rpg:16_35",
+    "rpg:17_35"
+  ],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    {
+      "pezzo": "seggio_alto",
+      "cella": [
+        7,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "scudo_parete_a",
+      "cella": [
+        1,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_b",
+      "cella": [
+        3,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_c",
+      "cella": [
+        5,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_a",
+      "cella": [
+        9,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_b",
+      "cella": [
+        11,
+        0
+      ]
+    },
+    {
+      "pezzo": "scudo_parete_c",
+      "cella": [
+        13,
+        0
+      ]
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        2,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        12,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        2,
+        7
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "palo_sala",
+      "cella": [
+        12,
+        7
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "focolare_lungo",
+      "cella": [
+        5,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "focolare_lungo",
+      "cella": [
+        7,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "focolare_lungo",
+      "cella": [
+        9,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_23",
+      "cella": [
+        14,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "rastrelliera",
+      "cella": [
+        0,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "pezzo": "props_neve_24",
+      "cella": [
+        14,
+        5
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_19",
+      "cella": [
+        4,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        5,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_22",
+      "cella": [
+        6,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_19",
+      "cella": [
+        8,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        9,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_22",
+      "cella": [
+        10,
+        3
+      ],
+      "solido": true
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        7,
+        5
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 18,
+      "tremola": true
+    },
+    {
+      "cella": [
+        5,
+        5
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 11,
+      "tremola": true
+    },
+    {
+      "cella": [
+        9,
+        5
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.25
+      ],
+      "raggio": 11,
+      "tremola": true
+    },
+    {
+      "cella": [
+        7,
+        1
+      ],
+      "colore": [
+        1.0,
+        0.75,
+        0.45
+      ],
+      "raggio": 9
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "VikJarl",
+      "cella": [
+        7,
+        2
+      ],
+      "nome": "@committenti.atto2.jarl",
+      "parla": true,
+      "committente": "jarl"
+    },
+    {
+      "sprite": "MiniQueen",
+      "cella": [
+        9,
+        2
+      ],
+      "flip": true,
+      "nome": "@stanza.fiordo.castello.residenti.1.nome"
+    },
+    {
+      "sprite": "MiniHalberdMan",
+      "cella": [
+        4,
+        4
+      ]
+    },
+    {
+      "sprite": "MiniSpearMan",
+      "cella": [
+        10,
+        4
+      ],
+      "flip": true
+    },
+    {
+      "sprite": "MiniVillagerWoman",
+      "cella": [
+        11,
+        7
+      ],
+      "flip": true
+    }
+  ],
+  "voci": [
+    "@stanza.fiordo.castello.voci.0",
+    "@stanza.fiordo.castello.voci.1",
+    "@stanza.fiordo.castello.voci.2",
+    "@stanza.fiordo.castello.voci.3"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "tipologia": "casa_piacere",
+  "nome": "@nomi.lanterna_rossa",
+  "ingresso": "@stanza.fiordo.casa_piacere.ingresso",
+  "luogo": "casaDiPiacere",
+  "combattimento": true,
+  "celle": [
+    11,
+    7
+  ],
+  "porta": 5,
+  "pavimento": [
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:00_06",
+    "rpg:01_06",
+    "rpg:02_08"
+  ],
+  "parete": [
+    "rpg:16_35",
+    "rpg:17_35"
+  ],
+  "bordo": "rpg:17_34",
+  "arredo": [
+    {
+      "tile": "rpg:02_10",
+      "cella": [
+        1,
+        0
+      ]
+    },
+    {
+      "tile": "rpg:08_20",
+      "cella": [
+        3,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:07_23",
+      "cella": [
+        5,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:08_20",
+      "cella": [
+        7,
+        0
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:02_10",
+      "cella": [
+        9,
+        0
+      ]
+    },
+    {
+      "tile": "rpg:06_24",
+      "cella": [
+        10,
+        1
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:06_20",
+      "cella": [
+        2,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_21",
+      "cella": [
+        1,
+        3
+      ]
+    },
+    {
+      "tile": "rpg:04_12",
+      "cella": [
+        8,
+        3
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:03_21",
+      "cella": [
+        9,
+        3
+      ],
+      "flip": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        0,
+        6
+      ],
+      "solido": true
+    },
+    {
+      "tile": "rpg:00_22",
+      "cella": [
+        10,
+        6
+      ],
+      "solido": true
+    }
+  ],
+  "luci": [
+    {
+      "cella": [
+        3,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.35,
+        0.35
+      ],
+      "raggio": 11
+    },
+    {
+      "cella": [
+        7,
+        0
+      ],
+      "colore": [
+        1.0,
+        0.35,
+        0.35
+      ],
+      "raggio": 11
+    },
+    {
+      "cella": [
+        5,
+        4
+      ],
+      "colore": [
+        1.0,
+        0.55,
+        0.4
+      ],
+      "raggio": 12,
+      "tremola": true
+    }
+  ],
+  "residenti": [
+    {
+      "sprite": "MiniOldWoman",
+      "cella": [
+        5,
+        2
+      ],
+      "nome": "@stanza.fiordo.casa_piacere.residenti.0.nome",
+      "parla": true,
+      "salute": true
+    },
+    {
+      "sprite": "MiniVillagerWoman",
+      "cella": [
+        3,
+        2
+      ]
+    },
+    {
+      "sprite": "MiniVillagerWoman",
+      "cella": [
+        7,
+        4
+      ],
+      "flip": true
+    },
+    {
+      "sprite": "MiniMerchant",
+      "cella": [
+        3,
+        4
+      ]
+    },
+    {
+      "sprite": "MiniVillagerMan",
+      "cella": [
+        8,
+        2
+      ],
+      "flip": true
+    }
+  ],
+  "voci": [],
+  "_nota": "Il fiordo (25/09 notte): gli arredi di Valdarno in una casa di tavole e terra battuta."
+}

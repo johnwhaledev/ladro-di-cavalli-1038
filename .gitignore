@@ -1,0 +1,36 @@
+# .gitignore — Ladro di cavalli 1038 d.C. (preparato il 13/10, v. PUBBLICAZIONE.md)
+
+# --- sorgenti di terzi: NON si ridistribuiscono (CREDITS.md) -----------------
+# la licenza Mana Seed vieta di pubblicare i file sorgente del pacchetto; il
+# pool Mini ha provenienze ancora da verificare; dentro ci sono anche i layer
+# del character studio, i ritagli delle tavole e le prove dei generatori
+_src/
+_pipeline_sorgenti.zip
+
+# --- prodotti intermedi e prove: si rifanno con gli strumenti -----------------
+# out/: foto, provini, log dei collaudi (oltre 800 MB)
+out/
+# dist/: gli atlanti per citta' prima dell'innesto (assets/ e' quello vero)
+dist/
+# _archive/: codice tolto e prove vecchie (oltre 200 MB)
+_archive/
+# un'immagine di riferimento del castello, non usata dal gioco
+castello.png
+
+# --- cache --------------------------------------------------------------------
+.ruff_cache/
+__pycache__/
+*.pyc
+
+# --- documenti di lavoro: non si pubblicano (tua decisione del 13/10) -------
+PLAN.md
+JOURNAL.md
+DA_FARE.md
+SESSIONE_2026-09-20.md
+PIPELINE_2.md
+PROMPT_*.md
+PROMPT_ASSET.json
+STORIA_BOZZE.md
+LIBRO.md
+PUBBLICAZIONE.md
+RACCONTO.md

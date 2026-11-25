@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Ladro di cavalli 1038 d.C.</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8F%B0%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    /* stile unico, lo stesso della schermata del titolo: notte indaco,
+       filo oro, brace per i comandi */
+    --paper:#2b2848; --ink:#f4e9d0; --edge:#e8c66f; --card:#3b3763;
+    --soft:#bdb4d6; --gold:#f2cd74; --brace:#e0703a; --buio:#14122a;
+    --pix:'Press Start 2P',ui-monospace,'Courier New',monospace;
+  }
+  /* Press Start 2P self-hostato, come in Star Drifter: nessuna chiamata a Google. */
+  @font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;
+    src:url(fonts/press-start-2p-latin-ext.woff2) format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+  @font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;
+    src:url(fonts/press-start-2p-latin.woff2) format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+  html,body{margin:0;padding:0;height:100%;background:var(--buio);overflow:hidden;
+    font-family:var(--pix);color:var(--ink);
+    -webkit-user-select:none;user-select:none;touch-action:none;}
+  #game{display:block;position:absolute;inset:0;width:100%;height:100%;}
+
+  .hud{position:absolute;pointer-events:none;z-index:5;
+    text-shadow:2px 2px 0 #000;}
+  #hudTL{top:12px;left:14px;font-size:10px;line-height:2;}
+  .bar{width:184px;height:12px;border:2px solid var(--edge);background:var(--buio);
+    margin:4px 0;overflow:hidden;box-shadow:2px 2px 0 #000;}
+  .bar i{display:block;height:100%;transition:width .12s linear;}
+  #hpFill{background:linear-gradient(#f0604f,#8a2418);}
+  #staFill{background:linear-gradient(#ffd96a,#b9861e);}
+  #money{color:var(--gold);font-size:11px;}
+  #stars{font-size:14px;letter-spacing:3px;color:#6a6288;}
+  #stars .on{color:var(--gold);text-shadow:0 0 8px rgba(232,198,111,.7);}
+  #clock{font-size:9px;color:var(--soft);letter-spacing:1px;}
+
+  #zoomAvviso{top:118px;left:14px;display:none;max-width:420px;font-size:9px;line-height:1.9;
+    background:rgba(60,14,10,.92);border:2px solid var(--brace);padding:8px 12px;}
+  #objective{top:12px;left:50%;transform:translateX(-50%);font-size:9px;line-height:1.9;
+    max-width:54vw;text-align:center;background:rgba(36,33,66,.8);
+    padding:8px 14px;border:2px solid var(--edge);box-shadow:3px 3px 0 #000;}
+  /* in basso, in colonna dal basso in su: il dialogo, il tasto ("E — ..."),
+     la barra. Prima ognuno stava a un'altezza fissa e un dialogo di tre
+     righe finiva sotto il tasto (14/10, tua segnalazione) */
+  #basso{bottom:96px;left:50%;transform:translateX(-50%);display:flex;
+    flex-direction:column;align-items:center;gap:10px;width:max-content;max-width:80vw;}
+  #msg{text-align:center;
+    font-size:10px;line-height:1.9;max-width:80vw;background:rgba(36,33,66,.85);
+    padding:8px 16px;border:2px solid var(--edge);box-shadow:3px 3px 0 #000;
+    opacity:0;transition:opacity .35s;}
+  #msg:empty{display:none;}
+  #prompt{font-size:10px;
+    background:rgba(36,33,66,.88);padding:8px 18px;border:2px solid var(--brace);
+    box-shadow:3px 3px 0 #000;display:none;}
+  #conquista{display:none;
+    text-align:center;background:rgba(36,33,66,.85);padding:10px 18px;
+    border:2px solid var(--edge);box-shadow:3px 3px 0 #000;}
+  #conqLabel{font-size:9px;margin-bottom:6px;}
+  #conqFill{background:linear-gradient(#9ec38f,#4f7a45);width:0%;}
+  #conqNota{font-size:8px;color:var(--soft);margin-top:5px;min-height:14px;}
+  #minimap{position:absolute;top:12px;right:14px;z-index:5;
+    filter:drop-shadow(3px 3px 0 rgba(0,0,0,.8));}
+  #hint{bottom:34px;right:16px;font-size:8px;color:var(--soft);text-align:right;
+    line-height:1.9;}
+
+  /* ---- plancia di bordo ---- */
+  #plancia{position:absolute;inset:6vh 6vw;z-index:20;display:none;
+    background:var(--paper);color:var(--ink);border:3px solid var(--edge);
+    box-shadow:6px 6px 0 rgba(0,0,0,.7);
+    flex-direction:column;overflow:hidden;}
+  #planciaTop{display:flex;align-items:center;justify-content:space-between;
+    padding:12px 18px;border-bottom:3px solid var(--edge);}
+  #planciaTop h1{margin:0;font-size:13px;color:var(--gold);letter-spacing:1px;}
+  #planciaTabs{display:flex;gap:8px;}
+  .tab{font-family:inherit;cursor:pointer;background:var(--card);
+    border:2px solid var(--edge);box-shadow:3px 3px 0 #000;
+    padding:9px 11px;color:var(--ink);font-size:8px;text-transform:uppercase;}
+  .tab:hover{color:var(--gold);}
+  .tab.on{background:var(--brace);color:#fff5dc;}
+  .tab:active{transform:translate(3px,3px);box-shadow:0 0 0 #000;}
+  #planciaBody{flex:1;min-height:0;overflow:auto;padding:18px 20px;}
+  h3.sec{margin:0 0 14px;font-size:9px;text-transform:uppercase;
+    letter-spacing:1px;color:var(--gold);}
+  .card{background:var(--card);border:2px solid rgba(232,198,111,.55);
+    box-shadow:3px 3px 0 #000;}
+  .card.pad{padding:12px 14px;}
+  .card p{margin:8px 0;line-height:2;font-size:9px;}
+  .grid{display:grid;gap:12px;}
+  .bag{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+  .item{padding:14px 10px;text-align:center;}
+  .item b{display:block;font-size:12px;line-height:1.6;margin-bottom:8px;font-weight:normal;color:var(--gold);}
+  .item span{font-size:7px;line-height:1.8;color:var(--soft);text-transform:uppercase;}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+  @media (max-width:720px){ .twocol{grid-template-columns:1fr;} }
+
+  /* ---- dissolvenza di porta: entrare e uscire dalle case, cambiare citta'.
+     Un'iride (01/10): un cerchio trasparente con un'ombra nera enorme attorno
+     che si stringe sul centro dello schermo, dove sta il ladro ---- */
+  #dissolvenza{position:absolute;left:50%;top:50%;z-index:21;pointer-events:none;
+    width:120vmax;height:120vmax;border-radius:50%;transform:translate(-50%,-50%);
+    box-shadow:0 0 0 150vmax #000;transition:width .33s ease-in-out,height .33s ease-in-out;}
+  #dissolvenza.chiusa{width:0;height:0;}
+  /* ---- scene di passaggio (passaggi.js): arresti, tradimenti, arrivi ---- */
+  #scena{position:absolute;inset:0;z-index:30;display:none;opacity:0;
+    align-items:center;justify-content:center;background:var(--buio);
+    transition:opacity .6s ease;cursor:pointer;}
+  #scenaBox{width:min(680px,88vw);text-align:center;}
+  #scenaBox h1{font-size:clamp(16px,3.4vw,28px);line-height:1.5;margin:0;font-weight:normal;
+    color:var(--gold);letter-spacing:2px;text-shadow:4px 4px 0 #5a2a10;}
+  #scenaSotto{color:var(--soft);margin:14px 0 28px;font-size:9px;line-height:2;}
+  #scenaRighe p{color:var(--ink);font-size:10px;line-height:2.2;margin:0 0 14px;}
+  #scenaRighe p.vecchia{opacity:.45;}
+  #scenaAvanti{margin-top:24px;color:var(--brace);font-size:8px;letter-spacing:.5px;}
+  /* ---- bottega del fabbro ---- */
+  #bottega{position:absolute;inset:0;z-index:22;display:none;
+    align-items:center;justify-content:center;background:rgba(20,18,40,.8);}
+  #bottegaBox{width:min(780px,92vw);max-height:86vh;overflow:hidden;
+    background:var(--paper);color:var(--ink);border:3px solid var(--edge);
+    box-shadow:6px 6px 0 rgba(0,0,0,.7);display:flex;flex-direction:column;}
+  #bottegaTop{display:flex;align-items:center;justify-content:space-between;
+    padding:12px 18px;border-bottom:3px solid var(--edge);}
+  #bottegaTop h1{margin:0;font-size:12px;color:var(--gold);}
+  #bottegaBody{padding:16px 18px;overflow:auto;}
+  .arma{display:flex;gap:14px;align-items:center;padding:11px 13px;
+    margin-bottom:10px;}
+  .arma .txt{flex:1;min-width:0;}
+  .arma b{display:block;font-size:10px;font-weight:normal;color:var(--gold);}
+  .arma small{color:var(--soft);font-size:8px;line-height:1.9;display:block;
+    margin-top:5px;}
+  .arma .st{font-size:8px;color:var(--soft);margin-top:5px;}
+  .arma button{white-space:nowrap;}
+  .arma.ok{background:#2c4a3a;}
+
+  /* ---- carta del regno ---- */
+  #mapWrap{position:absolute;inset:0;z-index:21;display:none;
+    align-items:center;justify-content:center;background:rgba(20,18,40,.8);}
+  #mapCanvas{border:3px solid var(--edge);box-shadow:6px 6px 0 rgba(0,0,0,.7);
+    background:var(--paper);}
+
+  /* ---- touch ---- */
+  #joy{position:absolute;bottom:26px;left:26px;width:132px;height:132px;
+    border:2px solid rgba(232,198,111,.45);border-radius:50%;z-index:6;
+    display:none;touch-action:none;}
+  #joyKnob{position:absolute;left:42px;top:42px;width:48px;height:48px;
+    border-radius:50%;background:rgba(232,198,111,.4);}
+  .tbtn{position:absolute;width:76px;height:76px;border-radius:50%;
+    background:rgba(36,33,66,.65);border:2px solid rgba(232,198,111,.6);
+    color:var(--ink);font-size:13px;font-family:var(--pix);z-index:6;
+    display:none;touch-action:none;}
+  #btnE{right:32px;bottom:124px;}
+  #btnAtk{right:124px;bottom:36px;}
+
+  /* ---- titolo (schermata iniziale) ---- */
+  #title{--t-inchiostro:#efe2c0;--t-fioco:#8f86a8;--t-brace:#e2622f;--t-oro:#ffcf5c;
+    position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;padding:24px 24px 44px;
+    cursor:pointer;font-family:'Press Start 2P',ui-monospace,'Courier New',monospace;
+    background:
+      radial-gradient(ellipse 90% 45% at 50% 100%,rgba(226,98,47,.38),transparent 70%),
+      linear-gradient(180deg,#070914 0%,#12132b 55%,#2a1830 100%);}
+  /* stelle a pixel e righe di scansione, leggere */
+  #title::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background:
+      repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px),
+      radial-gradient(1.5px 1.5px at 12% 18%,#fff8 50%,transparent),
+      radial-gradient(1.5px 1.5px at 27% 62%,#fff6 50%,transparent),
+      radial-gradient(2px 2px at 44% 9%,#fffb 50%,transparent),
+      radial-gradient(1.5px 1.5px at 63% 27%,#fff7 50%,transparent),
+      radial-gradient(2px 2px at 78% 14%,#fffa 50%,transparent),
+      radial-gradient(1.5px 1.5px at 90% 48%,#fff6 50%,transparent),
+      radial-gradient(1.5px 1.5px at 6% 80%,#fff5 50%,transparent);}
+  #title>*{position:relative}
+  #title h1{font-size:clamp(20px,4.6vw,46px);line-height:1.35;margin:0;font-weight:normal;
+    color:var(--t-inchiostro);letter-spacing:2px;
+    text-shadow:4px 4px 0 #3b1d14,0 0 26px rgba(226,98,47,.45);}
+  #title h1 b{display:block;font-weight:normal;color:var(--t-oro);font-size:1.25em;
+    text-shadow:4px 4px 0 #5a2a10,0 0 30px rgba(255,207,92,.5);}
+  #title h2{font-size:clamp(8px,1.4vw,12px);color:var(--t-fioco);margin:22px 0 26px;
+    font-weight:normal;letter-spacing:1px;line-height:1.8;}
+  #title p{max-width:560px;color:#b8afcf;line-height:2.1;font-size:clamp(8px,1.2vw,10px);
+    padding:16px 20px;border:2px solid rgba(255,207,92,.35);background:rgba(7,9,20,.6);}
+  #title .go{margin-top:28px;background:var(--t-brace);border:3px solid var(--t-oro);
+    color:#fff5dc;padding:16px 30px;font-size:clamp(10px,1.6vw,14px);font-family:inherit;
+    box-shadow:4px 4px 0 #3b1d14;animation:pulse 1.8s infinite;cursor:pointer;}
+  .go:hover{background:#f07a3f}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  #loading{color:var(--t-fioco);font-size:9px;margin-top:20px;}
+  #partite{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center;}
+  #partite .mini{background:rgba(7,9,20,.75);border:2px solid rgba(255,207,92,.45);
+    color:var(--t-inchiostro);padding:9px 14px;font-size:9px;font-family:inherit;cursor:pointer;}
+  #partite .mini:hover{border-color:var(--t-oro);color:var(--t-oro);}
+  #sceltaCitta,#sceltaLingua{margin-top:16px;font-size:8px;color:var(--t-fioco);}
+  #cittaSel,#linguaSel{margin-left:6px;background:rgba(7,9,20,.8);border:2px solid rgba(255,207,92,.35);
+    color:var(--t-inchiostro);font-family:inherit;font-size:8px;padding:4px 6px;}
+  /* barra dei link, come in Star Drifter: sito, Ko-fi, GitHub */
+  #links{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;
+    justify-content:center;gap:12px;height:26px;background:rgba(7,9,20,.8);
+    border-top:2px solid rgba(255,207,92,.3);font-size:8px;}
+  #links a{color:var(--t-fioco);text-decoration:none;letter-spacing:.5px;}
+  #links a:hover{color:var(--t-oro);}
+  #links .sep{color:rgba(255,207,92,.3);}
+</style>
+</head>
+<body>
+
+<canvas id="game"></canvas>
+
+<div id="hudTL" class="hud">
+  <div class="bar"><i id="hpFill" style="width:100%"></i></div>
+  <div class="bar" style="width:120px;height:7px"><i id="staFill" style="width:100%"></i></div>
+  <div><span id="money">0</span> <span data-tx="pagina.denari">denari</span> &nbsp; <span id="clock">06:00</span></div>
+  <div id="stars"></div>
+</div>
+<div id="objective" class="hud"></div>
+<div id="zoomAvviso" class="hud" data-tx="pagina.zoom">La pagina è ingrandita col pinch (due dita sul touchpad o sullo
+  schermo): il gioco esce dalla finestra a destra e in basso, minimappa compresa. Allarga le
+  due dita al contrario per tornare alla misura intera.</div>
+<div id="dissolvenza"></div>
+<div id="scena"><div id="scenaBox">
+  <h1 id="scenaTitolo"></h1><p id="scenaSotto"></p>
+  <div id="scenaRighe"></div><div id="scenaAvanti"></div>
+</div></div>
+<div id="basso" class="hud">
+  <div id="conquista">
+    <div id="conqLabel" data-tx="pagina.conquista">Conquista del campo</div>
+    <div class="bar" style="width:240px;height:13px"><i id="conqFill"></i></div>
+    <div id="conqNota"></div>
+  </div>
+  <div id="prompt"></div>
+  <div id="msg"></div>
+</div>
+<canvas id="minimap" width="150" height="150"></canvas>
+<div id="hint" class="hud" data-tx="pagina.tasti">Tab plancia · M carta · E interagisci · Spazio colpisci · T tenda · N musica</div>
+
+<div id="plancia">
+  <div id="planciaTop">
+    <h1 data-tx="pagina.plancia">Plancia di bordo</h1>
+    <button class="tab" id="planciaEsporta" data-tx="pagina.esporta" data-tx-title="pagina.esporta_nota" title="Scarica l'ultimo salvataggio come file JSON">Esporta partita</button>
+    <div id="planciaTabs">
+      <button class="tab on" data-tab="zaino" data-tx="pagina.zaino">Zaino</button>
+      <button class="tab" data-tab="diario" data-tx="pagina.diario">Diario</button>
+      <button class="tab" data-tab="regno" data-tx="pagina.regno">Regno</button>
+      <button class="tab" id="planciaClose" data-tx="pagina.chiudi">Chiudi</button>
+    </div>
+  </div>
+  <div id="planciaBody"></div>
+</div>
+
+<div id="mapWrap"><canvas id="mapCanvas"></canvas></div>
+
+<div id="bottega">
+  <div id="bottegaBox">
+    <div id="bottegaTop">
+      <h1 id="bottegaTitolo" data-tx="pagina.bottega">Bottega di Ferrante</h1>
+      <button class="tab" id="bottegaClose" data-tx="pagina.chiudi">Chiudi</button>
+    </div>
+    <div id="bottegaBody"></div>
+  </div>
+</div>
+
+<div id="joy"><div id="joyKnob"></div></div>
+<button class="tbtn" id="btnE">E</button>
+<button class="tbtn" id="btnAtk">⚔</button>
+
+<div id="title">
+  <h1><span data-tx="pagina.titolo">LADRO DI CAVALLI</span> <b>1038 d.C.</b></h1>
+  <p data-tx="pagina.intro">Un borgo sul fiume, una piazza di mercato, un castello che guarda dall'alto
+     e un bosco dove il balivo non mette piede. Ruba un carro, prendi un
+     incarico, evita la ronda.</p>
+  <button class="go" id="goBtn" data-tx="pagina.entra">Entra nel borgo</button>
+  <div id="partite">
+    <button class="mini" id="continuaBtn" hidden>Continua</button>
+    <button class="mini" id="importaBtn" data-tx="pagina.importa">Importa partita</button>
+    <input type="file" id="importaFile" accept=".json,application/json" hidden>
+  </div>
+  <!-- in prova (25/09 sera): la citta' si sceglie prima di iniziare; la
+       pagina si ricarica con ?pianta=... -->
+  <label id="sceltaCitta">Città (prova):
+    <select id="cittaSel">
+      <option value="">Boscotenne</option>
+      <option value="fiordo">Il Fiordo</option>
+      <option value="fiordo-3">Fiordo generato 3</option>
+      <option value="fiordo-7">Fiordo generato 7</option>
+      <option value="costa-3">Costa saracena 3</option>
+      <option value="costa-5">Costa saracena 5</option>
+      <option value="gen-1">Borgo generato 1</option>
+      <option value="gen-2">Borgo generato 2</option>
+      <option value="gen-3">Borgo generato 3</option>
+      <option value="gen-4">Borgo generato 4</option>
+      <option value="gen-5">Borgo generato 5</option>
+      <option value="nave">La nave (prova)</option>
+    </select>
+  </label>
+  <div id="loading">caricamento…</div>
+  <div id="links">
+    <a href="https://github.com/johnwhaledev" target="_blank" rel="noopener noreferrer">GITHUB</a>
+    <span class="sep">·</span>
+    <a href="https://www.johnwhale.com" target="_blank" rel="noopener noreferrer">WWW.JOHNWHALE.COM</a>
+    <span class="sep">·</span>
+    <a href="https://ko-fi.com/johnwhale" target="_blank" rel="noopener noreferrer">KO-FI</a>
+  </div>
+</div>
+
+<script>
+// Gli script si caricano con la loro data di modifica nell'URL (?v=...): il
+// browser li tiene in cache finche' non cambiano, e dopo un aggiornamento non
+// serve piu' Ctrl+F5. La data la dice il server (Last-Modified) con una HEAD
+// per file; se non risponde si scarica tutto da capo. Gli atlanti hanno gia'
+// la loro versione, il build del manifest (assets.js).
+const SCRIPT = ['vendor/three.min.js', 'src/assets.js',
+                'src/lingue/it.js', 'src/lingue/en.js', 'src/lingua.js',
+                'src/cast.js', 'src/piante.js', 'src/world.js', 'src/genera_pianta.js', 'src/pianta_borgo.js', 'src/pianta_fiordo.js',
+                'src/pianta_costa.js',
+                'src/world_borgo.js', 'src/world_corte.js', 'src/world_porto.js', 'src/world_valdarno.js', 'src/world_campagna.js', 'src/world_fiordo.js', 'src/world_costa.js',
+                'src/world_abitanti.js', 'src/nav.js', 'src/ambiente.js', 'src/meteo.js',
+                'src/audio.js', 'src/colonna.js', 'src/interni.js', 'src/nave.js', 'src/sagome.js', 'src/gfx.js', 'src/story.js', 'src/storia_fiordo.js', 'src/storia_mare.js', 'src/storia_costa.js', 'src/storia_ritorno.js', 'src/campagna.js',
+                'src/bestie.js', 'src/entities.js', 'src/traffico.js', 'src/nebbia.js', 'src/obiettivo.js', 'src/hud.js', 'src/salvataggio.js', 'src/tenda.js',
+                'src/viaggio.js', 'src/fuochi.js', 'src/passaggi.js',
+                'src/particelle.js', 'src/scia.js', 'src/cartiglio.js',
+                'src/missioni.js', 'src/missioni_base.js', 'src/missioni_luoghi.js', 'src/missioni_nave.js', 'src/missioni_costa.js',
+                'src/missioni_ritorno.js', 'src/tocco.js', 'src/crediti.js', 'src/viaggi.js', 'src/volume.js',
+                'src/discorsi.js', 'src/missioni_carro.js',
+                'src/game.js'];
+
+async function versione(src) {
+  try {
+    const r = await fetch(src, { method: 'HEAD', cache: 'no-store' });
+    return Date.parse(r.headers.get('Last-Modified')) || Date.now();
+  } catch (e) {
+    return Date.now();
+  }
+}
+
+// tutti insieme ma eseguiti in ordine (async = false)
+async function caricaScript() {
+  const v = await Promise.all(SCRIPT.map(versione));
+  await Promise.all(SCRIPT.map((src, i) => new Promise((ok, ko) => {
+    const s = document.createElement('script');
+    s.src = src + '?v=' + v[i];
+    s.async = false;
+    s.onload = ok;
+    s.onerror = () => ko(new Error('script non caricato: ' + src));
+    document.body.appendChild(s);
+  })));
+}
+
+// Lo zoom a due dita ingrandisce la pagina dentro la finestra senza
+// cambiarne la misura (non e' lo zoom del browser, Ctrl +/-): il gioco resta
+// tagliato a destra e in basso. Da qui non si annulla, quindi si avvisa
+if (window.visualViewport) {
+  const avviso = document.getElementById('zoomAvviso');
+  const guarda = () => {
+    avviso.style.display = visualViewport.scale > 1.02 ? 'block' : 'none';
+  };
+  visualViewport.addEventListener('resize', guarda);
+  guarda();
+}
+
+(async () => {
+  const load = document.getElementById('loading');
+  const title = document.getElementById('title');
+  try {
+    await caricaScript();
+    await Game.start();
+    load.textContent = TX('pagina.pronto');
+    const via = () => {
+      title.style.display = 'none';
+      Cartiglio.mostra(Interni.dentro ? Interni.stanza.nome : __game.world.pianta.nome);
+    };
+    document.getElementById('goBtn').addEventListener('click', via);
+    title.addEventListener('click', via);
+    // le partite salvate: il clic su questi bottoni non chiude il titolo da se'
+    document.getElementById('partite').addEventListener('click', e => e.stopPropagation());
+    // la citta': si ricarica la pagina con la pianta scelta (il mondo si
+    // costruisce all'avvio)
+    const sel = document.getElementById('cittaSel');
+    const scelta = document.getElementById('sceltaCitta');
+    sel.value = new URLSearchParams(location.search).get('pianta') || '';
+    scelta.addEventListener('click', e => e.stopPropagation());
+    document.getElementById('links').addEventListener('click', e => e.stopPropagation());
+    sel.addEventListener('change', () => {
+      const q = new URLSearchParams(location.search);
+      if (sel.value) q.set('pianta', sel.value); else q.delete('pianta');
+      location.search = q.toString();
+    });
+    const ultimo = Salvataggio.leggiLocale();
+    const cont = document.getElementById('continuaBtn');
+    const ROMANI = ['I', 'II', 'III', 'IV', 'V'];
+    const quando = s => new Date(s.quando).toLocaleString('it-IT',
+      { dateStyle: 'short', timeStyle: 'short' });
+    if (ultimo) {
+      const a = Salvataggio.attoDi(ultimo);
+      cont.hidden = false;
+      cont.textContent = TX('pagina.continua', { atto: a ? TX('pagina.continua_atto', { n: ROMANI[a] }) : '',
+        cap: ultimo.capitolo + 1, quando: quando(ultimo) });
+      cont.addEventListener('click', () => { Game.carica(ultimo); via(); });
+    }
+    // gli atti da riprendere da capo (salvataggio.js): dal secondo in poi
+    for (const { atto, s } of Salvataggio.leggiAtti()) {
+      if (!atto) continue;
+      const b = document.createElement('button');
+      b.className = 'mini';
+      b.textContent = TX('pagina.da_capo', { n: ROMANI[atto] });
+      b.title = quando(s);
+      b.addEventListener('click', () => { Game.carica(s); via(); });
+      document.getElementById('partite').insertBefore(b, document.getElementById('importaBtn'));
+    }
+    const file = document.getElementById('importaFile');
+    document.getElementById('importaBtn').addEventListener('click', () => file.click());
+    file.addEventListener('change', async () => {
+      if (!file.files[0]) return;
+      try { await Game.carica(await Salvataggio.importa(file.files[0])); via(); }
+      catch (err) { load.textContent = TX('pagina.file_non_valido', { perche: err.message }); }
+      file.value = '';
+    });
+    document.getElementById('planciaEsporta')
+      .addEventListener('click', () => Game.esportaUltimo());
+  } catch (e) {
+    load.textContent = 'errore: ' + e.message;
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>

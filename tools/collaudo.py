@@ -1418,7 +1418,7 @@ def scena_citta(c):
     errori = []
     pagina.on("pageerror", lambda e: errori.append(str(e)))
     pagina.on("console", lambda m: m.type == "error" and errori.append(m.text))
-    url = c.page.url.split("?")[0]
+    url = c.page.url.split("?")[0] + "?prova"   # il menu della citta' si vede solo con ?prova
     try:
         pagina.goto(url, wait_until="load")
         pagina.wait_for_function("() => document.getElementById('loading').textContent === 'pronto'",

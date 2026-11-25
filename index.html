@@ -194,6 +194,9 @@
     color:var(--t-inchiostro);padding:9px 14px;font-size:9px;font-family:inherit;cursor:pointer;}
   #partite .mini:hover{border-color:var(--t-oro);color:var(--t-oro);}
   #sceltaCitta,#sceltaLingua{margin-top:16px;font-size:8px;color:var(--t-fioco);}
+  #sceltaLingua{display:block;}
+  /* la scelta della citta' e della lingua sono per le prove: si vedono solo con ?prova */
+  html:not(.prova) #sceltaCitta,html:not(.prova) #sceltaLingua{display:none;}
   #cittaSel,#linguaSel{margin-left:6px;background:rgba(7,9,20,.8);border:2px solid rgba(255,207,92,.35);
     color:var(--t-inchiostro);font-family:inherit;font-size:8px;padding:4px 6px;}
   /* barra dei link, come in Star Drifter: sito, Ko-fi, GitHub */
@@ -380,6 +383,7 @@ if (window.visualViewport) {
     const sel = document.getElementById('cittaSel');
     const scelta = document.getElementById('sceltaCitta');
     sel.value = new URLSearchParams(location.search).get('pianta') || '';
+    document.documentElement.classList.toggle('prova', new URLSearchParams(location.search).has('prova'));
     scelta.addEventListener('click', e => e.stopPropagation());
     document.getElementById('links').addEventListener('click', e => e.stopPropagation());
     sel.addEventListener('change', () => {

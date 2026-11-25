@@ -51,7 +51,7 @@ const Lingua = (() => {
     if (!citta) return;
     const riga = document.createElement('label');
     riga.id = 'sceltaLingua';
-    riga.style.display = 'block';        // lo stile e' quello della citta' (index.html)
+    // lo stile e' quello della citta' (index.html), display:block compreso
     riga.style.marginTop = '8px';
     riga.append(t('lingua.lingua'));
     const sel = document.createElement('select');
